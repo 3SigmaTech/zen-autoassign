@@ -1,0 +1,18 @@
+{
+    "app": {
+        "name": "Auto-Assigner",
+        "short_description": "Assigns tickets to viewing user if ticket and user have same group.",
+        "long_description": "There is no longer description.",
+        "installation_instructions": "Simply click install.",
+        "parameters": {
+            "groups": {
+                "label": "Auto-Assign Groups",
+                "helpText": "Comma-separated list of group names and/or ids that will auto-assign on view."
+            },
+            "exactmatch": {
+                "label": "Match user groups exactly",
+                "helpText": "If true, tickets will only auto-assign if the ticket group and user group are identical. (Useful to avoid assigning tickets to non-agent users such as QA or Training.)"
+            }
+        }
+    }
+}
