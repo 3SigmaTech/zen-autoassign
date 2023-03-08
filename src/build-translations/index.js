@@ -30,13 +30,45 @@ function updateAppDetailsIfNecessary(translations) {
     let updated = false;
     let appObj = {};
     for (let key of README_KEYS) {
-        let rx = new RegExp(`# ${key.replace("_", " ")}\\n([\\s\\S]*?)\\n#`, "im");
+        let rx = new RegExp(`# ${key.replace("_", " ")}\\n([\\s\\S]*?)\\n# `, "im");
         let matches = readme.match(rx);
-        if (appObj[key] != matches[1].trim()) {
-            appObj[key] = matches[1].trim();
-            updated = true;
+        if (matches.length > 1) {
+            if (appObj[key] != matches[1].trim()) {
+                appObj[key] = matches[1].trim();
+                updated = true;
+            }
         }
     }
+
+    let prx = new RegExp(`## Parameters([\\s\\S]*?)\\n# `, "im");
+    let pMatches = readme.match(prx);
+    let params = translations[DEFAULT_LOCALE]["app"]["parameters"];
+    if (pMatches.length > 1) {
+        prx = new RegExp(`<!-- ([\\s\\S]*?) -->\\n\\* \\*\\*([\\s\\S]*?)\\*\\*[-:] ([\\s\\S]*?)\\n`, "g");
+        pMatches = pMatches[1].matchAll(prx);
+        for (const match of pMatches) {
+            let pname = match[1];
+            let plabel = match[2];
+            let phelp = match[3];
+            if (params[pname]) {
+                if (params[pname]["label"] != plabel) {
+                    params[pname]["label"] = plabel;
+                    updated = true;
+                }
+                if (params[pname]["helpText"] != phelp) {
+                    params[pname]["helpText"] = phelp;
+                    updated = true;
+                }
+            } else {
+                params[pname] = {
+                    "label": plabel,
+                    "helpText": phelp
+                }
+                updated = true;
+            }
+        }
+    }
+
     if (updated) {
         for (let key in appObj) {
             translations[DEFAULT_LOCALE]["app"][key] = appObj[key];

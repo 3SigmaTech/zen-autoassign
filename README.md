@@ -15,10 +15,22 @@ If you like this app, but it is missing a feature critical to your workflow: [Le
 
 # Installation Instructions
 **Note**: You need administrator permissions in Zendesk to set up the app.
- * Click the Install button above on this page. 
- * Set up the app configuration according to your needs. 
+ * Click the Install button above on this page.
+ * Set up the app configuration according to your needs (see below for configurable parameters).
  * That's it! You're ready to start saving clicks.
-        
+
+## Parameters
+
+<!-- groups -->
+* **Auto-Assign Groups**: Comma-separated list of group names and/or ids that will auto-assign a ticket when viewed by an agent.
+<!-- runonall -->
+* **Auto-Assign all groups**: If true, the app will run on all tickets. Use the below role/group restrictions to control which users are effected. (This setting will prevent 'Match all user groups' from working properly and will ignore the setting above.)
+<!-- matchall -->
+* **Match all user groups**: If true, tickets will only auto-assign if all of the user's groups are in Auto-Assign Groups above. (Useful to avoid assigning tickets to non-agent users such as QA or Training.)
+<!-- exactmatch -->
+* **Match user groups exactly**: If true, tickets will only auto-assign if the ticket group matches the user's one and only group. (This is helpful if you're installing the app for one user group.)
+<!-- tagstoadd -->
+* **Tags**: Set this to a non-blank value to apply tags to each ticket when auto-assigned. Enter multiple tags as comma separated list.
 
 ---------------------------------------
 
