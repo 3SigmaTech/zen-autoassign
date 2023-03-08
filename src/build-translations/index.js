@@ -7,12 +7,14 @@ const DESTINATION = "./src/translations.js";
 const DEFAULT_LOCALE = "en";
 const TRANSLATIONS_DIR = "./translations";
 const README = "./readme.md";
+const MANIFEST = "./manifest.json";
 const README_KEYS = ["name", "short_description", "long_description", "installation_instructions"];
 
 (async function() {
     const translations = getTranslations();
 
     updateAppDetailsIfNecessary(translations);
+    checkManifest(translations);
     
     const updated = checkForUpdates(translations);
     if (updated) {
@@ -40,14 +42,16 @@ function updateAppDetailsIfNecessary(translations) {
         }
     }
 
-    let prx = new RegExp(`## Parameters([\\s\\S]*?)\\n# `, "im");
+    let prx = new RegExp(`## Configuration Options([\\s\\S]*?)\\n# `, "im");
     let pMatches = readme.match(prx);
     let params = translations[DEFAULT_LOCALE]["app"]["parameters"];
+    let pFound = [];
     if (pMatches.length > 1) {
         prx = new RegExp(`<!-- ([\\s\\S]*?) -->\\n\\* \\*\\*([\\s\\S]*?)\\*\\*[-:] ([\\s\\S]*?)\\n`, "g");
         pMatches = pMatches[1].matchAll(prx);
         for (const match of pMatches) {
             let pname = match[1];
+            pFound.push(pname);
             let plabel = match[2];
             let phelp = match[3];
             if (params[pname]) {
@@ -68,6 +72,11 @@ function updateAppDetailsIfNecessary(translations) {
             }
         }
     }
+    for (const key in params) {
+        if (pFound.indexOf(key) == -1) {
+            delete params[key];
+        }
+    }
 
     if (updated) {
         for (let key in appObj) {
@@ -78,6 +87,23 @@ function updateAppDetailsIfNecessary(translations) {
         fs.writeFileSync(TRANSLATIONS_DIR + '/' + DEFAULT_LOCALE + '.json', translationsString);
     }
     return appObj;
+}
+
+function checkManifest(translations) {
+    const mani = JSON.parse(fs.readFileSync(MANIFEST).toString());
+    const params = translations[DEFAULT_LOCALE]["app"]["parameters"];
+    for (let index in mani["parameters"]) {
+        let key = mani["parameters"][index]["name"];
+        if (params[key] == undefined) {
+            console.error("UNDOCUMENTED MANIFEST PARAMETER: " + key);
+        }
+    }
+    for (let key in params) {
+        let manip = mani["parameters"].filter((p) => { return p["name"] == key; });
+        if (manip.length != 1) {
+            console.error("MISSING MANIFEST PARAMETER: " + key);
+        }
+    }
 }
 
 function getTranslations() {
