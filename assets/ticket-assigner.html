@@ -3,14 +3,24 @@
 
 <head>
     <meta charset="utf-8">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://static.zdassets.com/zendesk_app_framework_sdk/2.0/zaf_sdk.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/@zendeskgarden/css-bedrock@7.0.21,npm/@zendeskgarden/css-utilities@4.3.0">
     <script type="text/javascript" src="http://localhost:3000/build/3st-autoassign.js"></script>
+    <style>
+        footer {
+            font-size: 0.75em;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 
 <body>
-    <p id="context">boop</p>
+    <p id="context">Reviewing ticket for auto-assignment.</p>
+    <footer>
+        <a href="https://3sigmatechnologies.com/support" target="_blank" data-i18n-key="report_bugs">
+            Report Issues
+        </a>
+    </footer>
     <script>
         autoassign.registerApp();
     </script>

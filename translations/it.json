@@ -1,0 +1,17 @@
+{
+    "default": {
+        "report_bugs": "Segnala problemi",
+        "load_location_error": "Assegna automaticamente l'app caricata da una posizione errata -",
+        "non_agent_status": "Il ticket non è in uno stato agente attivo.",
+        "ticket_already_assigned": "Il biglietto è già assegnato; non stiamo aggiornando l'assegnatario.",
+        "non_aa_ticket_group": "Il ticket non appartiene a un gruppo assegnato automaticamente.",
+        "group_does_not_match": "Il gruppo di ticket non è nel gruppo o nei gruppi dell'utente.",
+        "non_aa_user_groups": "L'utente non appartiene a nessun gruppo assegnato automaticamente.",
+        "non_aa_user_groups_exact": "L'utente appartiene ad almeno un gruppo non assegnato automaticamente.",
+        "ticket_unsuccessfully_assigned": "Si è verificato un errore durante il tentativo di assegnare automaticamente il ticket.",
+        "ticket_successfully_assigned": "Il ticket è stato assegnato automaticamente con successo.",
+        "ticket_assigned_notification": "Il ticket è stato assegnato automaticamente.",
+        "ticket_not_assigned": "Ticket non assegnato automaticamente:",
+        "too_many_user_groups": "L'utente appartiene a più di un gruppo di utenti."
+    }
+}

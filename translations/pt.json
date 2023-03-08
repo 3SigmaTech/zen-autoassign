@@ -1,0 +1,17 @@
+{
+    "default": {
+        "report_bugs": "Relatar problemas",
+        "load_location_error": "Aplicativo de atribuição automática carregado de localização incorreta -",
+        "non_agent_status": "O ticket não está em um status de agente ativo.",
+        "ticket_already_assigned": "O ticket já está atribuído; não estamos atualizando o cessionário.",
+        "non_aa_ticket_group": "O ticket não pertence a um grupo atribuído automaticamente.",
+        "group_does_not_match": "O grupo de tickets não está no(s) grupo(s) do usuário.",
+        "non_aa_user_groups": "O usuário não pertence a nenhum grupo atribuído automaticamente.",
+        "non_aa_user_groups_exact": "O usuário pertence a pelo menos um grupo que não é atribuído automaticamente.",
+        "ticket_unsuccessfully_assigned": "Ocorreu um erro ao tentar atribuir automaticamente o ticket.",
+        "ticket_successfully_assigned": "O ticket foi atribuído automaticamente com sucesso.",
+        "ticket_assigned_notification": "O ticket foi atribuído automaticamente.",
+        "ticket_not_assigned": "Bilhete não atribuído automaticamente:",
+        "too_many_user_groups": "O usuário pertence a mais de um grupo de usuários."
+    }
+}

@@ -1,5 +1,5 @@
 {
-    "name": "Auto-Assign Unassigned Tickets",
+    "name": "Auto-Assign Tickets",
     "author": {
         "name": "Lucus Van Blaircum",
         "email": "lvb@3sigmatechnologies.com",
@@ -10,7 +10,7 @@
     "location": {
         "support": {
             "ticket_sidebar": {
-                "url": "assets/ticket-assigner.html",
+                "url": "http://localhost:3000/assets/ticket-assigner.html",
                 "flexible": true
             }
         }
@@ -20,6 +20,13 @@
             "name": "groups",
             "type": "text",
             "required": true,
+            "secure": false,
+            "default": ""
+        },
+        {
+            "name": "runonall",
+            "type": "checkbox",
+            "required": false,
             "secure": false,
             "default": ""
         },

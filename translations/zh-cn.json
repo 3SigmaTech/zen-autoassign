@@ -1,0 +1,17 @@
+{
+    "default": {
+        "report_bugs": "报告问题",
+        "load_location_error": "自动分配应用程序从错误的位置加载 -",
+        "non_agent_status": "工单未处于代理活动状态。",
+        "ticket_already_assigned": "票已分配；我们没有更新受让人。",
+        "non_aa_ticket_group": "工单不属于自动分配的组。",
+        "group_does_not_match": "工单组不在用户组中。",
+        "non_aa_user_groups": "用户不属于任何自动分配的组。",
+        "non_aa_user_groups_exact": "用户至少属于一个未自动分配的组。",
+        "ticket_unsuccessfully_assigned": "尝试自动分配工单时出错。",
+        "ticket_successfully_assigned": "工单已成功自动分配。",
+        "ticket_assigned_notification": "工单已自动分配。",
+        "ticket_not_assigned": "工单未自动分配：",
+        "too_many_user_groups": "用户属于多个用户组。"
+    }
+}

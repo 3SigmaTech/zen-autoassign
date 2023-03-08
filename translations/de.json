@@ -1,0 +1,17 @@
+{
+    "default": {
+        "report_bugs": "Probleme melden",
+        "load_location_error": "Autoassign-App von falschem Standort geladen -",
+        "non_agent_status": "Das Ticket befindet sich nicht im Agent-Aktiv-Status.",
+        "ticket_already_assigned": "Das Ticket ist bereits vergeben; Wir aktualisieren den Bevollmächtigten nicht.",
+        "non_aa_ticket_group": "Das Ticket gehört keiner automatisch zugewiesenen Gruppe an.",
+        "group_does_not_match": "Die Ticketgruppe befindet sich nicht in der/den Gruppe(n) des Benutzers.",
+        "non_aa_user_groups": "Der Benutzer gehört keiner automatisch zugewiesenen Gruppe an.",
+        "non_aa_user_groups_exact": "Der Benutzer gehört mindestens einer Gruppe an, die nicht automatisch zugewiesen wird.",
+        "ticket_unsuccessfully_assigned": "Beim Versuch, das Ticket automatisch zuzuweisen, ist ein Fehler aufgetreten.",
+        "ticket_successfully_assigned": "Das Ticket wurde erfolgreich automatisch zugewiesen.",
+        "ticket_assigned_notification": "Das Ticket wurde automatisch zugewiesen.",
+        "ticket_not_assigned": "Ticket nicht automatisch zugewiesen:",
+        "too_many_user_groups": "Der Benutzer gehört mehr als einer Benutzergruppe an."
+    }
+}
