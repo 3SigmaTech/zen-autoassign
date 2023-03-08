@@ -9,7 +9,10 @@ Zendesk's Guided Mode is a fantastic means of delivering work to agents. But if 
 For companies and teams with sophisticated workflows this can lead to tickets being sent to multiple agents at a time.
 
 This app solves that problem by assigning the ticket directly to the agent on view. No more duplication of effort!
-Simply set which Ticket Groups should be auto-assigned and the app will do the rest. As soon as an agent in that group views a ticket from that group, it will assign to them.
+Simply set which Ticket Groups should be auto-assigned and the app will do the rest. As soon as an agent in that group(s) views a ticket from that group(s), it will assign to them.
+
+This unobtrusive application will sit in the ticket sidebar and display the result of its "decision" (to assign, or not and why). Please review the installation instructions for a list of available configuration options.
+
 If you like this app, but it is missing a feature critical to your workflow: [Let us know!](https://support.3sigmatechnologies.com/hc/en-us/requests/new?ticket_form_id=13806449792525)
 
 
@@ -19,7 +22,7 @@ If you like this app, but it is missing a feature critical to your workflow: [Le
  * Set up the app configuration according to your needs (see below for configurable parameters).
  * That's it! You're ready to start saving clicks.
 
-## Parameters
+## Configuration Options
 
 <!-- groups -->
 * **Auto-Assign Groups**: Comma-separated list of group names and/or ids that will auto-assign a ticket when viewed by an agent.
@@ -35,9 +38,15 @@ If you like this app, but it is missing a feature critical to your workflow: [Le
 ---------------------------------------
 
 # Screenshot(s):
-[put your screenshots down here.]
 
+![Notifies the agent of the assignment allowing you, the admin, to preserve app space for more important visuals.](/assets/screenshot-0.png "Successful assignment")
+
+![Two layers of control over which groups are auto-assigned (within the app's setup and from the app's visibility).](/assets/screenshot-1.png "Two layers of control")
+
+![The app only auto-assigns tickets that are not assigned to individual agents.](/assets/screenshot-2.png "Already Assigned")
 
 # Notes about Icon Assets
+
 Icon Nav Bar and Icon Ticket Editor are both Logo.svg
+
 Icon Top Bar is Logo-Alternate.svg
