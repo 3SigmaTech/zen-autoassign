@@ -1,5 +1,5 @@
 {
-    "name": "Auto-Assign Tickets",
+    "name": "Auto-Assigner",
     "author": {
         "name": "Lucus Van Blaircum",
         "email": "lvb@3sigmatechnologies.com",
@@ -19,7 +19,7 @@
         {
             "name": "groups",
             "type": "text",
-            "required": true,
+            "required": false,
             "secure": false,
             "default": ""
         },
@@ -31,11 +31,25 @@
             "default": ""
         },
         {
+            "name": "matchall",
+            "type": "checkbox",
+            "required": false,
+            "secure": false,
+            "default": ""
+        },
+        {
             "name": "exactmatch",
             "type": "checkbox",
             "required": false,
             "secure": false,
             "default": ""
+        },
+        {
+            "name": "tagstoadd",
+            "type": "text",
+            "required": false,
+            "secure": false,
+            "default": "auto-assigned"
         }
     ],
     "version": "1.0",

@@ -115,16 +115,21 @@ function checkAssignment(locale, client, ticket, user, settings) {
         return i18n.getTranslation(locale, "too_many_user_groups");
     }
 
+    let updateTicket = {
+        "id": ticket['id'],
+        "assignee_id": user['id']
+    }
+    if (settings["tagstoadd"]) {
+        updateTicket["additional_tags"] = settings["tagstoadd"].split(',').map(function (value) {
+            return value.trim();
+        });
+    }
     client.request({
         url: '/api/v2/tickets/update_many.json?ids=' + ticket['id'],
         type: 'PUT',
         contentType: 'application/json',
         data: JSON.stringify({
-            "tickets": [{
-                "id": ticket['id'],
-                "assignee_id": user['id'],
-                "additional_tags": ['3sigma_auto_assigned']
-            }]
+            "tickets": [updateTicket]
         })
     }).then(function (data) {
         displayToUser(i18n.getTranslation(locale, "ticket_successfully_assigned"));
