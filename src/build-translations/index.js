@@ -6,9 +6,14 @@ import * as gtranslate from "./google-translate.js";
 const DESTINATION = "./src/translations.js";
 const DEFAULT_LOCALE = "en";
 const TRANSLATIONS_DIR = "./translations";
+const README = "./readme.md";
+const README_KEYS = ["name", "short_description", "long_description", "installation_instructions"];
 
 (async function() {
     const translations = getTranslations();
+
+    updateAppDetailsIfNecessary(translations);
+    
     const updated = checkForUpdates(translations);
     if (updated) {
         await updateTranslations(translations);
@@ -18,6 +23,30 @@ const TRANSLATIONS_DIR = "./translations";
         console.log(`Translations up-to-date`);
     }
 })();
+
+function updateAppDetailsIfNecessary(translations) {
+    const readme = fs.readFileSync(README).toString();
+
+    let updated = false;
+    let appObj = {};
+    for (let key of README_KEYS) {
+        let rx = new RegExp(`# ${key.replace("_", " ")}\\n([\\s\\S]*?)\\n#`, "im");
+        let matches = readme.match(rx);
+        if (appObj[key] != matches[1].trim()) {
+            appObj[key] = matches[1].trim();
+            updated = true;
+        }
+    }
+    if (updated) {
+        for (let key in appObj) {
+            translations[DEFAULT_LOCALE]["app"][key] = appObj[key];
+        }
+
+        const translationsString = JSON.stringify(translations[DEFAULT_LOCALE], null, 4);
+        fs.writeFileSync(TRANSLATIONS_DIR + '/' + DEFAULT_LOCALE + '.json', translationsString);
+    }
+    return appObj;
+}
 
 function getTranslations() {
     const jsonFiles = fs

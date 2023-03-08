@@ -1,9 +1,5 @@
 {
     "app": {
-        "name": "Auto-Assigner",
-        "short_description": "Assigns tickets to viewing user if ticket and user have same group.",
-        "long_description": "Zendesk's Guided Mode is a fantastic means of delivering work to agents. But if your agents do a lot of work *outside* of Zendesk, the tickets they're viewing will be sent to another agent automatically.\nFor companies and teams with sophisticated workflows this can lead to tickets being sent to multiple agents at a time.\n\nThis app solves that problem by assigning the ticket directly to the agent on view. No more duplication of effort!\nSimply set which Ticket Groups should be auto-assigned and the app will do the rest. As soon as an agent in that group views a ticket from that group, it will assign to them.\nIf you like this app, but it is missing a feature critical to your workflow: [Let us know!](https://d3v-3sigma.zendesk.com/hc/en-us/requests/new?ticket_form_id=13806449792525)",
-        "installation_instructions": "**Note**: You need administrator permissions in Zendesk to set up the app.\n * Click the Install button above on this page. \n * Set up the app configuration according to your needs. \n * That's it! You're ready to start saving clicks.",
         "parameters": {
             "groups": {
                 "label": "Auto-Assign Groups",
@@ -21,7 +17,11 @@
                 "label": "Run auto-assign for all groups",
                 "helpText": "If true, the app will run on all tickets. Use the below role/group restrictions to control which users are effected. (This setting will prevent 'Match all user groups' from working properly.)"
             }
-        }
+        },
+        "name": "Auto-Assigner",
+        "short_description": "Assigns tickets to viewing user if ticket and user have same group.",
+        "long_description": "Zendesk's Guided Mode is a fantastic means of delivering work to agents. But if your agents do a lot of work *outside* of Zendesk, the tickets they're viewing will be sent to another agent automatically.\nFor companies and teams with sophisticated workflows this can lead to tickets being sent to multiple agents at a time.\n\nThis app solves that problem by assigning the ticket directly to the agent on view. No more duplication of effort!\nSimply set which Ticket Groups should be auto-assigned and the app will do the rest. As soon as an agent in that group views a ticket from that group, it will assign to them.\nIf you like this app, but it is missing a feature critical to your workflow: [Let us know!](https://d3v-3sigma.zendesk.com/hc/en-us/requests/new?ticket_form_id=13806449792525)",
+        "installation_instructions": "**Note**: You need administrator permissions in Zendesk to set up the app.\n * Click the Install button above on this page. \n * Set up the app configuration according to your needs. \n * That's it! You're ready to start saving clicks.\n        \n\n---------------------------------------"
     },
     "default": {
         "report_bugs": "Report Issues",
